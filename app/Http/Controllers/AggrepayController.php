@@ -10,9 +10,8 @@ class AggrepayController extends Controller
     public function payNow(Request $request) {
         // echo 'pay now';
 
-        \Aggrepay::pay([
-            'order_id' => 'test0013', 
-            'mode' => 'TEST', 
+        \Aggrepay::startPayment([
+            'order_id' => 'test0015', 
             'amount' => '20.00', 
             'currency' => 'INR', 
             'description' => 'test', 
@@ -27,7 +26,7 @@ class AggrepayController extends Controller
     }
 
     public function payStatus(Request $request) {
-        echo 'pay status';
+        
         $result = \Aggrepay::aggrepayData($_POST);
 
         echo json_encode($result->getParams());
