@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/aggrepayPayment','AggrepayController@payNow');
+Route::get('/payNow','AggrepayController@payNow');
 Route::post('/payStatus','AggrepayController@payStatus');
