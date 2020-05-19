@@ -25,6 +25,15 @@ class AggrepayController extends Controller
         ])->send();
     }
 
+    public function paymentStatus(Request $request) {
+        // echo 'pay now';
+
+        \Aggrepay::paymentStatus([
+            'order_id' => 'test0015',
+            'return_url' => url('/payStatus')
+        ])->send();
+    }
+
     public function payStatus(Request $request) {
         
         $result = \Aggrepay::aggrepayData($_POST);

@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/payNow','AggrepayController@payNow');
+Route::get('/paymentStatus','AggrepayController@paymentStatus');
 Route::post('/payStatus','AggrepayController@payStatus');
